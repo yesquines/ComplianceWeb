@@ -1,5 +1,5 @@
 ---
-- name: Instalando - LAMP - AWX
+- name: Instalando - LAMP AWX
   host: all
   tasks:
   - name: Garantindo Pacotes - Like Debian
