@@ -1,6 +1,6 @@
 ---
 - name: Instalando - LAMP - AWX
-  host: all
+  hosts: all
   tasks:
   - name: Garantindo Pacotes - Like Debian
     apt: 
