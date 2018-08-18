@@ -20,5 +20,5 @@
     with_items:
     - httpd
     - mariadb
-    - php7
+    - php
     when: ansible_distribution == "Fedora"
