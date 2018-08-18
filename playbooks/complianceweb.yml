@@ -22,3 +22,13 @@
     - mariadb
     - php
     when: ansible_distribution == "Fedora"
+
+  - name: Garantindo Pacotes - Like Fedora
+    yum: 
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - httpd
+    - mariadb
+    - php
+    when: ansible_distribution == "CentOS"
