@@ -23,7 +23,7 @@
     - php
     when: ansible_distribution == "Fedora"
 
-  - name: Garantindo Pacotes - Like Fedora
+  - name: Garantindo Pacotes - Like CentOS
     yum: 
       name: "{{ item }}"
       state: present
