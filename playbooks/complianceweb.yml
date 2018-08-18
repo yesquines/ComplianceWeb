@@ -2,7 +2,7 @@
 - name: Instalando - LAMP - AWX
   hosts: all
   tasks:
-  - name: Garantindo Pacotes - Like Debian
+  - name: Garantindo Pacotes - Like Debian-
     apt: 
       name: {{ item }}
       state: present
