@@ -4,31 +4,19 @@
   tasks:
   - name: Garantindo Pacotes - Like Debian-
     apt: 
-      name: "{{ item }}"
+      name: ['apache2','mysql-server','php7']
       state: present
       update_cache: true
-    with_items:
-    - apache2
-    - mysql-server
-    - php7
     when: ansible_os_family == "Debian"
 
   - name: Garantindo Pacotes - Like Fedora
     dnf: 
-      name: "{{ item }}"
+      name: ['httpd','mariadb','php']
       state: present
-    with_items:
-    - httpd
-    - mariadb
-    - php
     when: ansible_distribution == "Fedora"
 
   - name: Garantindo Pacotes - Like CentOS
     yum: 
-      name: "{{ item }}"
+      name: ['httpd','maridb','php']
       state: present
-    with_items:
-    - httpd
-    - mariadb
-    - php
     when: ansible_distribution == "CentOS"
