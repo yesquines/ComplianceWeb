@@ -17,6 +17,6 @@
 
   - name: Garantindo Pacotes - Like CentOS
     yum: 
-      name: ['httpd','mariadb','php7.2']
+      name: ['httpd','mariadb','php']
       state: present
     when: ansible_distribution == "CentOS"
