@@ -4,7 +4,7 @@
   tasks:
   - name: Garantindo Pacotes - Like Debian-
     apt: 
-      name: ['apache2','mysql-server','php7']
+      name: ['apache2','mysql-server','php7.2']
       state: present
       update_cache: true
     when: ansible_os_family == "Debian"
@@ -17,6 +17,6 @@
 
   - name: Garantindo Pacotes - Like CentOS
     yum: 
-      name: ['httpd','mariadb','php']
+      name: ['httpd','mariadb','php7.2']
       state: present
     when: ansible_distribution == "CentOS"
