@@ -2,12 +2,18 @@
 - name: Instalando - LAMP - AWX
   hosts: all
   tasks:
-  - name: Garantindo Pacotes - Like Debian-
+  - name: Garantindo Pacotes - Like Debian
     apt: 
       name: ['apache2','mysql-server','php7.2']
       state: present
       update_cache: true
     when: ansible_os_family == "Debian"
+
+  - name: Garantindo Pacotes - Like CentOS
+    yum: 
+      name: ['httpd','mariadb','php']
+      state: present
+    when: ansible_distribution == "CentOS"
 
   - name: Garantindo Pacotes - Like Fedora
     dnf: 
@@ -15,8 +21,8 @@
       state: present
     when: ansible_distribution == "Fedora"
 
-  - name: Garantindo Pacotes - Like CentOS
-    yum: 
-      name: ['httpd','mariadb','php']
+  - name: Garantindo Pacotes - Like Suse
+    zypper: 
+      name: ['apache2','mariadb','php7']
       state: present
-    when: ansible_distribution == "CentOS"
+    when: ansible_family == "Suse"
