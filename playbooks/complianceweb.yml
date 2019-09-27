@@ -25,4 +25,4 @@
     zypper: 
       name: ['apache2','mariadb','php7']
       state: present
-    when: ansible_family == "Suse"
+    when: ansible_os_family == "Suse"
