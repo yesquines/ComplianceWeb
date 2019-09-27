@@ -4,7 +4,7 @@
   tasks:
   - name: Garantindo Pacotes - Like Debian
     apt: 
-      name: ['apache2','mysql-server','php7.2']
+      name: ['apache2','mariadb-server','php7.2']
       state: present
       update_cache: true
     when: ansible_os_family == "Debian"
